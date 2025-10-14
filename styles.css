@@ -1,75 +1,38 @@
-/* =============================
-   THEME & TOKENS
-   ============================= */
+/*
+Uploaded image to https://www.canva.com/colors/color-palette-generator/
+and generate a color palette:
+
+Nebula
+#ccdedb
+
+Ebony
+#111c29
+
+Avocado
+#80865a
+
+Finch
+#646444
+*/
 :root {
   --nebula: hsl(170, 21%, 84%);
   --ebony: hsl(213, 41%, 11%);
   --avocado: hsl(68, 20%, 44%);
   --finch: hsl(60, 19%, 33%);
   --border-width: 0.5rem;
-  --radius: 1rem;
   --lightness-factor: 1.2;
-
-  /* Type scale (fluid) */
-  --step--1: clamp(0.9rem, 0.82rem + 0.3vw, 1rem);
-  --step-0: clamp(1rem, 0.92rem + 0.6vw, 1.125rem);
-  --step-1: clamp(1.25rem, 1.1rem + 1vw, 1.5rem);
-  --step-2: clamp(1.5rem, 1.3rem + 1.5vw, 2rem);
-  --step-3: clamp(2rem, 1.6rem + 2.5vw, 2.75rem);
-
-  /* Spacing scale */
-  --space-1: 0.5rem;
-  --space-2: 0.875rem;
-  --space-3: 1.25rem;
-  --space-4: 2rem;
-  --space-5: 3rem;
-
-  /* Elevation */
-  --shadow-soft: 0 10px 20px rgba(0,0,0,0.25);
-  --shadow-glow: 0 0 0.5rem rgba(0,0,0,0.2), 0 0 1rem rgba(0,0,0,0.08);
 }
-
-/* Optional: Light mode fallback if user prefers it */
-@media (prefers-color-scheme: light) {
-  :root {
-    --nebula: hsl(213, 41%, 11%);
-    --finch: hsl(0, 0%, 98%);
-    --avocado: hsl(68, 20%, 92%);
-    --ebony: hsl(213, 41%, 18%);
-  }
-}
-
-/* =============================
-   BASE
-   ============================= */
-/* If you're loading Fresca from Google Fonts, include:
-<link href="https://fonts.googleapis.com/css2?family=Fresca&display=swap" rel="stylesheet">
-*/
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
 body {
-  font: 16px/1.6 "Fresca", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font:
+    16px Fresca,
+    Arial,
+    sans-serif;
   background-color: var(--finch);
   color: white;
   text-align: center;
   margin: 0;
   padding: 0;
 }
-
-/* Improve line breaks from <br><br> in lyrics */
-p br {
-  display: block;
-  margin-bottom: 0.75rem;
-  content: "";
-}
-
-/* =============================
-   LAYOUT WRAPPERS
-   ============================= */
 header,
 main,
 footer {
@@ -77,137 +40,46 @@ footer {
   margin: 0 auto;
   padding: 0;
 }
-
-/* Give the main content some breathing room */
-main {
-  font-size: var(--step-0);
-  padding: var(--space-4) var(--space-3);
-  background-color: hsl(from var(--avocado) h s calc(l * var(--lightness-factor)));
-  border-left: var(--ebony) solid var(--border-width);
-  border-right: var(--ebony) solid var(--border-width);
-  border-radius: 0 0 var(--radius) var(--radius);
-  box-shadow: var(--shadow-soft);
-  text-align: left;              /* better for reading lyrics */
+figure {
+  margin: 0;
+  padding: 0;
 }
-
-/* Keep sections nicely separated */
-main section {
-  padding: var(--space-3) 0;
-  border-bottom: 1px dashed color-mix(in hsl, var(--ebony) 50%, transparent);
-}
-main section:last-child { border-bottom: 0; }
-
-/* =============================
-   HEADER & HERO
-   ============================= */
-header,
-footer {
-  border: var(--ebony) solid var(--border-width);
-  background-color: var(--avocado);
-  text-align: center;
-}
-
-header {
-  font-size: var(--step-2);
-  padding: 0 0 var(--space-3) 0;
-  border-radius: var(--radius) var(--radius) 0 0;
-  box-shadow: var(--shadow-glow);
-}
-
-header h1 {
-  font-size: var(--step-3);
-  margin: var(--space-2) 0 0 0;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-header h2 {
-  font-size: var(--step-1);
-  margin: var(--space-1) 0 var(--space-2);
-  opacity: 0.95;
-}
-
-/* Link styling with high-visibility focus */
-header a,
-header a:visited {
-  color: var(--nebula);
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-  transition: opacity 150ms ease, text-underline-offset 150ms ease;
-}
-header a:hover { opacity: 0.9; text-underline-offset: 0.28em; }
-header a:focus-visible {
-  outline: 3px solid var(--nebula);
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-
-/* =============================
-   MEDIA
-   ============================= */
-figure { margin: 0; padding: 0; }
 figure img {
   object-fit: cover;
   width: 100%;
   height: auto;
   margin: 0;
   padding: 0;
-  display: block;
-  border-bottom: var(--ebony) solid var(--border-width);
-  filter: contrast(1.05) saturate(1.05);
 }
-
-/* =============================
-   TYPOGRAPHY
-   ============================= */
-main h3 {
-  margin: 0 0 var(--space-2) 0;
-  font-size: var(--step-1);
-  letter-spacing: 0.3px;
-  color: color-mix(in hsl, var(--nebula) 88%, white);
-}
-
-main p {
-  margin: 0;
-  font-size: var(--step-0);
-  line-height: 1.85;
-}
-
-strong {
-  color: var(--nebula);
-  font-weight: 700;
-  text-shadow: 0 0 0.25rem rgba(0,0,0,0.25);
-}
-
-/* =============================
-   FOOTER
-   ============================= */
+header,
 footer {
-  font-size: var(--step-0);
-  padding: var(--space-3) 0;
   border: var(--ebony) solid var(--border-width);
-  border-radius: 0 0 var(--radius) var(--radius);
-  color: color-mix(in hsl, white 85%, var(--nebula));
+  padding: 0 0 1rem 0;
+  background-color: var(--avocado);
+  text-align: center;
 }
-
-/* =============================
-   UTILITIES
-   ============================= */
-/* Narrow screens: relax borders to save space */
-@media (max-width: 680px) {
-  :root { --border-width: 0.35rem; }
-
-  main {
-    padding: var(--space-3) var(--space-2);
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
-  }
-
-  header, footer { border-left: none; border-right: none; border-radius: 0; }
+header {
+  font-size: 2rem;
 }
-
-/* Respect reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
+header a,
+header a:visited {
+  color: var(--nebula);
+  /* text-decoration: none; */
+}
+main {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  background-color: hsl(
+    from var(--avocado) h s calc(l * var(--lightness-factor))
+  );
+  border-left: var(--ebony) solid var(--border-width);
+  border-right: var(--ebony) solid var(--border-width);
+}
+main h3 {
+  margin: 0;
+}
+footer {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  border: var(--ebony) solid var(--border-width);
 }
