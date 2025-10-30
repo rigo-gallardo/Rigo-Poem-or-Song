@@ -1,7 +1,85 @@
-body {
-  background-image: url();
-}
+/*
+Uploaded image to https://www.canva.com/colors/color-palette-generator/
+and generate a color palette:
 
-h1, h2, p {
+Nebula
+#ccdedb
+
+Ebony
+#111c29
+
+Avocado
+#80865a
+
+Finch
+#646444
+*/
+:root {
+  --nebula: hsl(170, 21%, 84%);
+  --ebony: hsl(213, 41%, 11%);
+  --avocado: hsl(68, 20%, 44%);
+  --finch: hsl(60, 19%, 33%);
+  --border-width: 0.5rem;
+  --lightness-factor: 1.2;
+}
+body {
+  font:
+    16px Fresca,
+    Arial,
+    sans-serif;
+  background-color: var(--finch);
+  color: white;
   text-align: center;
+  margin: 0;
+  padding: 0;
+}
+header,
+main,
+footer {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0;
+}
+figure {
+  margin: 0;
+  padding: 0;
+}
+figure img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+header,
+footer {
+  border: var(--ebony) solid var(--border-width);
+  padding: 0 0 1rem 0;
+  background-color: var(--avocado);
+  text-align: center;
+}
+header {
+  font-size: 2rem;
+}
+header a,
+header a:visited {
+  color: var(--nebula);
+  /* text-decoration: none; */
+}
+main {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  background-color: hsl(
+    from var(--avocado) h s calc(l * var(--lightness-factor))
+  );
+  border-left: var(--ebony) solid var(--border-width);
+  border-right: var(--ebony) solid var(--border-width);
+}
+main h3 {
+  margin: 0;
+}
+footer {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  border: var(--ebony) solid var(--border-width);
 }
